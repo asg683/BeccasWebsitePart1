@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Becca — Writing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="site">
+    <div class="book-area">
+
+      <!-- HOME / CLOSED BOOK -->
+      <section class="screen active" id="home">
+        <button class="closed-book" id="openBook" aria-label="Open Becca's book">
+          <div class="book-cover">
+            <div class="cover-small">The collected works of</div>
+            <div class="cover-name">Becca</div>
+            <div class="cover-line"></div>
+            <div class="cover-small">FICTION · NONFICTION · OTHER THINGS</div>
+          </div>
+          <div class="book-spine"></div>
+        </button>
+        <p class="hint">click the book to open</p>
+      </section>
+
+      <!-- FICTION -->
+      <section class="screen page" id="fiction">
+        <div class="paper">
+          <div class="page-number">01</div>
+          <div class="page-label">FICTION</div>
+          <h1>Fiction</h1>
+          <p class="intro">Stories, novels, and other imagined things.</p>
+
+          <div class="works">
+            <article class="work">
+              <span class="year">2020</span>
+              <h2>Naked at the Hair Salon</h2>
+              <p>I hadn’t known that haircuts could cost more than thirty dollars until I moved to the city for college, and hadn’t bothered to pay more than twenty for a trim until my sophomore year...</p>
+              <a href="https://db25.drunkenboat.com/issues-component-details/98" onclick="return false;">read more →</a>
+            </article>
+
+            <article class="work">
+              <span class="year">2023</span>
+              <h2>Lalita</h2>
+              <p>“You know how to read, don’t you?” Frank smiles and rips the Amazon package with his pinky nail. Four cookbooks drop out. “Or is that still forbidden for women over in India.”...</p>
+              <a href="#" onclick="return false;">read more →</a>
+            </article>
+
+            <article class="work">
+              <span class="year">2021</span>
+              <h2>Older Work</h2>
+              <p>More publications can be added here later.</p>
+              <a href="#" onclick="return false;">read more →</a>
+            </article>
+          </div>
+
+          <button class="turn next" data-next="nonfiction" aria-label="Turn to nonfiction">→</button>
+        </div>
+      </section>
+
+      <!-- NONFICTION -->
+      <section class="screen page" id="nonfiction">
+        <div class="paper">
+          <div class="page-number">02</div>
+          <div class="page-label">NONFICTION</div>
+          <h1>Nonfiction</h1>
+          <p class="intro">Essays, criticism, journalism, reviews, and other writing.</p>
+
+          <div class="works">
+            <article class="work">
+              <span class="year">2025</span>
+              <h2>Why I Still Put Asian...</h2>
+              <p>A life where I am not Indian is a life where I am not myself.</p>
+              <a href="https://www.huffpost.com/entry/im-still-putting-asian-on-my-college-application-even-if-it-costs-me-admission_n_5b3a340de4b0f3c221a2e243" onclick="return false;">read →</a>
+            </article>
+
+            <article class="work">
+              <span class="year">2024</span>
+              <h2>San Jose Car rRntal</h2>
+              <p>..</p>
+              <a href="#" onclick="return false;">read →</a>
+            </article>
+
+            <article class="work">
+              <span class="year">2022</span>
+              <h2>Friend of a Friend</h2>
+              <p>...</p>
+              <a href="#" onclick="return false;">read →</a>
+            </article>
+          </div>
+
+          <button class="turn back" data-next="fiction" aria-label="Turn back to fiction">←</button>
+          <button class="turn next" data-next="about" aria-label="Turn to about">→</button>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="screen page" id="about">
+        <div class="paper">
+          <div class="page-number">03</div>
+          <div class="page-label">ABOUT</div>
+          <h1>About Becca</h1>
+
+          <div class="about-layout">
+            <div class="portrait-placeholder">
+              <span>becca</span> 
+              <small>photo / illustration<br>goes here</small>
+            </div>
+
+            <div class="about-copy">
+              <p>
+                beccas bio
+              </p>
+              <p>
+                More information about work, interests, publications,
+                awards, education, or other projects can go here.
+              </p>
+
+              <h3>Contact</h3>
+              <p><a href="mailto:hello@example.com">your email</a></p>
+            </div>
+          </div>
+
+          <button class="turn back" data-next="nonfiction" aria-label="Turn back to nonfiction">←</button>
+          <button class="home-link" data-next="home">close book</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
