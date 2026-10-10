@@ -1,18 +1,4 @@
-const screens = document.querySelectorAll(".screen");
-
-function showPage(id) {
-  screens.forEach(screen => {
-    screen.classList.toggle("active", screen.id === id);
-  });
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-document.getElementById("openBook").addEventListener("click", () => {
-  showPage("fiction");
-});
-
-document.querySelectorAll("[data-next]").forEach(button => {
-  button.addEventListener("click", () => {
-    showPage(button.dataset.next);
-  });
-});
+// Direct publication links are configured in index.html.
+const pages = ['home','about','fiction','nonfiction'];let soundOn=true;let audioContext;const toggle=document.querySelector('#sound-toggle');toggle.addEventListener('click',()=>{soundOn=!soundOn;toggle.textContent=soundOn?'♫ sound on':'♫ sound off';toggle.setAttribute('aria-pressed',String(soundOn));});const fairyAudio = new Audio('assets/Fairytwinkle.mp3');fairyAudio.preload='auto';
+function chime(){if(!soundOn)return;try{fairyAudio.pause();fairyAudio.currentTime=0;fairyAudio.play().catch(()=>{});}catch(e){console.info('Sound unavailable',e)}}
+function sparkle(x,y){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;for(let i=0;i<7;i++){const s=document.createElement('span');s.className='sparkle';s.textContent=i%2?'✦':'✧';s.style.left=(x+(Math.random()-.5)*100)+'px';s.style.top=(y+(Math.random()-.5)*70)+'px';document.body.append(s);setTimeout(()=>s.remove(),850)}}function route(){let id=location.hash.slice(1)||'home';if(!pages.includes(id))id='home';pages.forEach(p=>document.getElementById(p).classList.toggle('active',p===id));document.querySelector('.subnav').classList.toggle('visible',id!=='home');document.title=(id==='home'?'Becca Stevenson':document.getElementById(id).querySelector('h2').textContent+' | Becca Stevenson');window.scrollTo(0,0)}window.addEventListener('hashchange',route);document.addEventListener('click',e=>{const link=e.target.closest('a');if(!link)return;chime();const r=link.getBoundingClientRect();sparkle(r.left+r.width/2,r.top+r.height/2)});route();
